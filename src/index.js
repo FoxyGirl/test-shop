@@ -13,14 +13,12 @@ import reducers from './reducers'
 import Layout from './containers/Layout'
 import Phones from './containers/Phones'
 
-console.log(`Layout ${Layout}`)
 const store = createStore(reducers, composeWithDevTools(applyMiddleware(thunk)))
-console.log(`store ${store}`)
-console.log(`browserHistory ${browserHistory}`)
+console.log(`store ${JSON.stringify(store)}`)
+console.log(`browserHistory ${JSON.stringify(browserHistory)}`)
 
 
 const history = syncHistoryWithStore(browserHistory, store)
-console.log(`Phones ${JSON.stringify(Phones)}`)
  
 ReacDOM.render(
     <Provider store={store}>
